@@ -82,7 +82,8 @@ Le programme génère un fichier .eps dans dossier_eps/ et l’ouvre automatique
 
 ---
 
-###Version test performance
+Version test performance
+
 Vous pouvez consulter les performances selon les fichiers grace a l'executable, test.sh, il faut faire :
 chmod 700 test.sh
 ./test.sh
