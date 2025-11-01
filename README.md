@@ -1,105 +1,111 @@
-# 🖼️ Vector is à l’heure
+# 🖼️ Vector is on Time
 
 ## 📖 Description
 
-Projet réalisé en **C** avec un script d’exécution en **shell (sh)**.  
-L’objectif : créer un **vectoriseur d’images PBM noir et blanc**, capable de convertir une image bitmap (PBM) en tracés vectoriels (EPS) à l’aide d’**approximations de Bézier** (ordre 2 ou 3) ou de simplifications de segments.
+This project was developed in **C** with an execution script written in **shell (sh)**.
+The goal is to create a **black and white PBM image vectorizer**, capable of converting bitmap (PBM) images into vector paths (EPS) using **Bézier curve approximations** (order 2 or 3) or **segment simplification**.
 
-Le script d’exécution propose une **interface interactive en ligne de commande**, permettant de :
-- Sélectionner un fichier `.pbm`
-- Choisir le mode de vectorisation (`bezier2`, `bezier3` ou `simplification segment`)
-- Choisir un seuil d
-- Visualiser le résultat automatiquement dans un visualiseur EPS (`gv`)
+The execution script provides an **interactive command-line interface**, allowing the user to:
+
+* Select a `.pbm` file
+* Choose the vectorization mode (`bezier2`, `bezier3`, or `segment simplification`)
+* Set a precision threshold `d`
+* Automatically visualize the result in an EPS viewer (`gv`)
 
 ---
 
-## ✨ Fonctionnalités principales
+## ✨ Main Features
 
-- 🧩 Lecture et analyse d’images PBM noir et blanc  
-- 📈 Conversion en tracés vectoriels Bézier (2e ou 3e ordre)  
-- 🧮 Paramétrage du seuil `d` pour la précision de la simplification  
-- 🗂️ Gestion automatique des fichiers de sortie dans `dossier_eps/`  
-- 💬 Interface shell simple et interactive  
-- 🎨 Visualisation directe avec `gv`  
+* 🧩 Reading and analyzing black & white PBM images
+* 📈 Conversion into Bézier vector paths (2nd or 3rd order)
+* 🧮 Adjustable threshold `d` for simplification precision
+* 🗂️ Automatic output management in `dossier_eps/`
+* 💬 Simple and interactive shell interface
+* 🎨 Direct visualization with `gv`
 
 ---
 
 ## ⚙️ Installation
 
-### 🔧 Dépendances
+### 🔧 Dependencies
 
-Assure-toi d’avoir les outils suivants installés sur ton système :
+Make sure the following tools are installed on your system:
 
-| Outil | Rôle | Commande d’installation |
-|--------|------|--------------------------|
-| `gcc` | Compilation du code C | `sudo apt install build-essential` |
-| `make` | Automatisation de la compilation | *(inclus avec build-essential)* |
-| `gv` | Visualiseur d’images EPS | `sudo apt install gv` |
-| `bash` / `sh` | Exécution du script | *(installé par défaut sur Linux/macOS)* |
+| Tool          | Purpose                | Installation Command               |
+| ------------- | ---------------------- | ---------------------------------- |
+| `gcc`         | Compiling the C code   | `sudo apt install build-essential` |
+| `make`        | Compilation automation | *(included with build-essential)*  |
+| `gv`          | EPS file viewer        | `sudo apt install gv`              |
+| `bash` / `sh` | Script execution       | *(default on Linux/macOS)*         |
 
 ---
 
-## 🚀 Utilisation
+## 🚀 Usage
 
 ### 1️⃣ Compilation
-Le script `exec.sh` s’en charge, mais tu peux aussi compiler manuellement :
 
+The `exec.sh` script handles compilation automatically, but you can also compile manually:
+
+```bash
 make
+```
 
-(Pour utiliser exec.sh faites la commande, chmod 700 exec.sh, cela vous donnera les droits d'executions)
+To grant execution rights to the script:
 
-2️⃣ Lancement du programme
+```bash
+chmod 700 exec.sh
+```
 
-Exécute le script interactif :
+### 2️⃣ Launch the Program
+
+Run the interactive script:
+
+```bash
 ./exec.sh
+```
 
+You’ll see something like this:
+
+```
 ###########################################
 #                                         #
-#  Bienvenue dans le vector is a l'heure  #
+#     Welcome to Vector is on Time        #
 #                                         #
-#        Donnez moi un fichier pbm        #
+#         Please choose a PBM file        #
 #                                         #
 ###########################################
+```
 
+### 3️⃣ Selecting a PBM File
 
-3️⃣ Sélection du fichier PBM
+Place your `.pbm` files inside the `dossier_pbm/` folder.
+Then enter the filename (e.g. `cat.pbm`).
 
-Place tes fichiers .pbm dans dossier_pbm/
+### 4️⃣ Choosing the Vectorization Mode
 
-Entre le nom du fichier (ex: chat.pbm)
+You can choose:
 
-4️⃣ Choix du mode de vectorisation
+* `bezier2` → 2nd-order Bézier curves
+* `bezier3` → 3rd-order Bézier curves
+* `segment simplification` → Linear simplification
 
-Saisis :
-
-bezier2 → courbes de Bézier d’ordre 2
-
-bezier3 → courbes de Bézier d’ordre 3
-
-simplification segment → simplification linéaire
-
-Le programme génère un fichier .eps dans dossier_eps/ et l’ouvre automatiquement avec gv
+The program generates a `.eps` file in `dossier_eps/` and automatically opens it using `gv`.
 
 ---
 
-Version test performance
+## 🧪 Performance Testing
 
-Vous pouvez consulter les performances selon les fichiers grace a l'executable, test.sh, il faut faire :
+You can test performance across different files using the `test.sh` script:
+
+```bash
 chmod 700 test.sh
 ./test.sh
+```
 
 ---
 
-🧑‍💻 Auteur
+## 👨‍💻 Authors
 
-Projet développé en C par Sabon Marcus et Stien Emilio
-
-Version originale : 2023
-
-Mise à jour et publication GitHub : 2025
-
-
-
-
-
-
+Developed in C by **Sabon Marcus** and **Stien Emilio**
+Original version: **2023**
+Updated and published on GitHub: **2025**
